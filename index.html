@@ -66,16 +66,22 @@ h3 {
 }
 
 .knop {
-    height: 70px;
+    height: 100px; /* groter gemaakt voor extra tekst */
+    padding: 10px 20px;
     border: none;
-    border-radius: 35px; /* afgeronde pilvorm */
-    font-size: 1rem;
+    border-radius: 35px; 
+    font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
     background: var(--primary);
     color: white;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column; /* tekst onder elkaar */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .knop:hover {
@@ -86,6 +92,12 @@ h3 {
 
 .knop:active {
     transform: scale(0.96);
+}
+
+.knop-ondertekst {
+    font-size: 0.8rem; /* kleinere ondertekst */
+    margin-top: 4px;
+    color: #7a9eaf; 
 }
 
 /* ================= Hamburger menu ================= */
@@ -130,7 +142,7 @@ h3 {
 
 @media (max-width: 600px) {
     h1 { font-size: 2rem; }
-    .knop { height: 60px; font-size: 0.9rem; }
+    .knop { height: 90px; font-size: 1rem; }
 }
 </style>
 </head>
@@ -161,19 +173,58 @@ h3 {
     <h2>Projectdocumentatie</h2>
 
     <div class="knoppen-container">
-        <button class="knop" onclick="location.href='Week1.html'">Week 1</button>
-        <button class="knop" onclick="location.href='Week2.html'">Week 2</button>
-        <button class="knop" onclick="location.href='Week3.html'">Week 3</button>
-        <button class="knop" onclick="location.href='Week4.html'">Week 4</button>
-        <button class="knop" onclick="location.href='Week5.html'">Week 5</button>
-        <button class="knop" onclick="location.href='Week6.html'">Week 6</button>
-        <button class="knop" onclick="location.href='Week7.html'">Week 7</button>
-        <button class="knop" onclick="location.href='Week8.html'">Week 8</button>
-        <button class="knop" onclick="location.href='Week9.html'">Week 9</button>
-        <button class="knop" onclick="location.href='Week10.html'">Week 10</button>
-        <button class="knop" onclick="location.href='Week11.html'">Week 11</button>
-        <button class="knop" onclick="location.href='Week12.html'">Week 12</button>
-        <button class="knop" onclick="location.href='Week13.html'">Week 13</button>
+        <button class="knop" onclick="location.href='Week1.html'">
+            Week 1
+            <span class="knop-ondertekst">Onderzoek & ontwerpfase 1</span>
+        </button>
+        <button class="knop" onclick="location.href='Week2.html'">
+            Week 2
+            <span class="knop-ondertekst">Tweede schetsen</span>
+        </button>
+        <button class="knop" onclick="location.href='Week3.html'">
+            Week 3
+            <span class="knop-ondertekst">Eerste mid-fi schetsen</span>
+        </button>
+        <button class="knop" onclick="location.href='Week4.html'">
+            Week 4
+            <span class="knop-ondertekst">Tweede mid-fi schetsen</span>
+        </button>
+        <button class="knop" onclick="location.href='Week5.html'">
+            Week 5
+            <span class="knop-ondertekst">ChatGPT</span>
+        </button>
+        <button class="knop" onclick="location.href='Week6.html'">
+            Week 6
+            <span class="knop-ondertekst">Leren coderen & aanvullen site</span>
+        </button>
+        <button class="knop" onclick="location.href='Week7.html'">
+            Week 7
+            <span class="knop-ondertekst">Vakantie</span>
+        </button>
+        <button class="knop" onclick="location.href='Week8.html'">
+            Week 8
+            <span class="knop-ondertekst">Examens</span>
+        </button>
+        <button class="knop" onclick="location.href='Week9.html'">
+            Week 9
+            <span class="knop-ondertekst">Brugdag</span>
+        </button>
+        <button class="knop" onclick="location.href='Week10.html'">
+            Week 10
+            <span class="knop-ondertekst">Interactieve Figma schermen voor de smartphone</span>
+        </button>
+        <button class="knop" onclick="location.href='Week11.html'">
+            Week 11
+            <span class="knop-ondertekst">Interactiviteit van de schermen</span>
+        </button>
+        <button class="knop" onclick="location.href='Week12.html'">
+            Week 12
+            <span class="knop-ondertekst">Extra info</span>
+        </button>
+        <button class="knop" onclick="location.href='Week13.html'">
+            Week 13
+            <span class="knop-ondertekst">Extra info</span>
+        </button>
     </div>
 
     <h3>Documentatie treinschermen</h3>
@@ -188,4 +239,6 @@ function toggleMenu() {
 
 </body>
 </html>
+
+
 

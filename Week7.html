@@ -1,38 +1,103 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 3</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 7 - Projectdocumentatie</title>
 
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="assets/styles.css">
-    <link rel="stylesheet" href="assets/flexboxes.css">
-    <link rel="stylesheet" href="assets/nav.css">
-    <link rel="stylesheet" href="assets/typography.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-     <!-- ⭐ EXTRA CSS voor witte transparante kader -->
-    <style>
-        .container {
-            background: rgba(255, 255, 255, 0.705); /* 40% wit */
-            padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px); /* optioneel: luxe glass effect */
-        }
-    </style>
+<style>
+:root {
+    --primary: #262342;
+    --accent: #78b7ff;
+    --background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--primary);
+    padding: 40px 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px 30px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vertical-buttons {
+    list-style: none;
+    padding: 0;
+}
+
+.vertical-buttons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: var(--primary);
+    color: white;
+    transition: background 0.3s;
+}
+
+.vertical-buttons a:hover {
+    background: var(--accent);
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="title">
-            Maxime Samsom 1GDM2
-        </div>
-        <div>
-            <ul class="vertical-buttons">
-                <li><a href="index.html">🏠︎</a></li>            
-            </ul>
-        </div>
-        <h2>Week 7 - Vakantie</h2>
-        <img src="public/Herfst.jpeg" alt="Mijn foto" width="600" height="400">
-        </page>
-    </div>
+
+<div class="container">
+    <div class="title">Maxime Samsom 1GDM2</div>
+
+    <ul class="vertical-buttons">
+        <li><a href="index.html">🏠︎</a></li>
+    </ul>
+
+    <h2>Week 7 - Vakantie</h2>
+    <img src="public/Herfst.jpeg" alt="Mijn foto" width="600" height="400">
+</div>
+
 </body>
 </html>
+

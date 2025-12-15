@@ -1,118 +1,94 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Homepage - Page 1</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projectdocumentatie</title>
 
-<!-- Link to CSS -->
-<link rel="stylesheet" href="assets/styles.css">
-<link rel="stylesheet" href="assets/flexboxes.css">
-<link rel="stylesheet" href="assets/nav.css">
-<link rel="stylesheet" href="assets/typography.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* Body en container */
+:root {
+    --primary: #262342;
+    --accent: #78b7ff;
+    --background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-size: cover;
-    text-align: center;
     margin: 0;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.705);
-    padding: 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(6px);
-    max-width: 900px;
-    margin: 40px auto;
-}
-
-h1, h2, h3 {
-    margin: 15px 0;
-}
-
-/* Knoppen-container */
-.knoppen-container {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
     display: flex;
     justify-content: center;
-    gap: 60px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-/* Trein knop */
-.knop {
-    width: 140px;
-    height: 70px;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: #262342;
-    color: white;
-    border: none;
-    border-radius: 25px 15px 15px 15px;
-    position: relative;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    transition: transform 0.3s, background-color 0.3s;
+    color: var(--primary);
+}
+
+/* ================= Container ================= */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-width: 1000px;
+    width: 90%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+h3 {
+    margin-top: 50px;
+    font-weight: 400;
+}
+
+/* ================= Knoppen ================= */
+.knoppen-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.knop {
+    height: 70px;
+    border: none;
+    border-radius: 35px; /* afgeronde pilvorm */
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .knop:hover {
-    background-color: #89db9c;
-    transform: translateY(-5px);
+    background: var(--accent);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .knop:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
-/* Wielen */
-.knop::before,
-.knop::after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    width: 20px;
-    height: 20px;
-    background: #262342;
-    border-radius: 50%;
-    border: 2px solid #000;
-}
-
-.knop::before {
-    left: 15px;
-}
-
-.knop::after {
-    right: 15px;
-}
-
-.knop:first-child {
-    border-radius: 30px 15px 15px 15px;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .knop {
-        width: 120px;
-        height: 60px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 600px) {
-    .knop {
-        width: 100px;
-        height: 50px;
-        font-size: 10px;
-    }
-}
-
-/* ========================= */
-/* Hamburger menu styling   */
-/* ========================= */
+/* ================= Hamburger menu ================= */
 .hamburger-menu {
     position: fixed;
     top: 20px;
@@ -121,37 +97,43 @@ h1, h2, h3 {
 }
 
 .hamburger {
-    font-size: 32px;
-    cursor: pointer;
-    background: #262342;
+    font-size: 30px;
+    background: var(--primary);
     color: white;
-    padding: 8px 14px;
-    border-radius: 8px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .menu {
-    margin-top: 10px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    padding: 15px;
+    margin-top: 12px;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
     display: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .menu a {
     display: block;
+    margin: 10px 0;
     text-decoration: none;
-    color: #262342;
-    font-weight: bold;
-    margin: 8px 0;
+    font-weight: 500;
+    color: var(--primary);
+    transition: color 0.2s ease;
 }
 
 .menu a:hover {
-    color: #97ce94;
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    .knop { height: 60px; font-size: 0.9rem; }
 }
 </style>
 </head>
-
 <body>
 
 <!-- Hamburger menu -->
@@ -175,36 +157,23 @@ h1, h2, h3 {
 </div>
 
 <div class="container">
-
-    <h1>Maxime Samsom 1GDM2</h1>
+    <h1>Maxime Samsom – 1GDM2</h1>
     <h2>Projectdocumentatie</h2>
 
     <div class="knoppen-container">
-        <button class="knop" onclick="window.location.href='Week1.html'">Week 1</button>
-        <button class="knop" onclick="window.location.href='Week2.html'">Week 2</button>
-        <button class="knop" onclick="window.location.href='Week3.html'">Week 3</button>
-    </div>
-
-    <div class="knoppen-container">
-        <button class="knop" onclick="window.location.href='Week4.html'">Week 4</button>
-        <button class="knop" onclick="window.location.href='Week5.html'">Week 5</button>
-        <button class="knop" onclick="window.location.href='Week6.html'">Week 6</button>
-    </div>
-
-    <div class="knoppen-container">
-        <button class="knop" onclick="window.location.href='Week7.html'">Week 7</button>
-        <button class="knop" onclick="window.location.href='Week8.html'">Week 8</button>
-        <button class="knop" onclick="window.location.href='Week9.html'">Week 9</button>
-    </div>
-
-    <div class="knoppen-container">
-        <button class="knop" onclick="window.location.href='Week10.html'">Week 10</button>
-        <button class="knop" onclick="window.location.href='Week11.html'">Week 11</button>
-        <button class="knop" onclick="window.location.href='Week12.html'">Week 12</button>
-    </div>
-
-    <div class="knoppen-container">
-        <button class="knop" onclick="window.location.href='Week13.html'">Week 13</button>
+        <button class="knop" onclick="location.href='Week1.html'">Week 1</button>
+        <button class="knop" onclick="location.href='Week2.html'">Week 2</button>
+        <button class="knop" onclick="location.href='Week3.html'">Week 3</button>
+        <button class="knop" onclick="location.href='Week4.html'">Week 4</button>
+        <button class="knop" onclick="location.href='Week5.html'">Week 5</button>
+        <button class="knop" onclick="location.href='Week6.html'">Week 6</button>
+        <button class="knop" onclick="location.href='Week7.html'">Week 7</button>
+        <button class="knop" onclick="location.href='Week8.html'">Week 8</button>
+        <button class="knop" onclick="location.href='Week9.html'">Week 9</button>
+        <button class="knop" onclick="location.href='Week10.html'">Week 10</button>
+        <button class="knop" onclick="location.href='Week11.html'">Week 11</button>
+        <button class="knop" onclick="location.href='Week12.html'">Week 12</button>
+        <button class="knop" onclick="location.href='Week13.html'">Week 13</button>
     </div>
 
     <h3>Documentatie treinschermen</h3>
@@ -212,12 +181,11 @@ h1, h2, h3 {
 
 <script>
 function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 </script>
 
 </body>
 </html>
-
 

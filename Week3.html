@@ -1,156 +1,247 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 3</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 3 - Projectdocumentatie</title>
 
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="assets/styles.css">
-    <link rel="stylesheet" href="assets/flexboxes.css">
-    <link rel="stylesheet" href="assets/nav.css">
-    <link rel="stylesheet" href="assets/typography.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #262342;
+    --accent: #78b7ff;
+    --background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--primary);
+    padding: 40px 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px 30px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vertical-buttons {
+    list-style: none;
+    padding: 0;
+}
+
+.vertical-buttons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: var(--primary);
+    color: white;
+    transition: background 0.3s;
+}
+
+.vertical-buttons a:hover {
+    background: var(--accent);
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-top: 0.5em;    /* verkleinde bovenmarge */
+    margin-bottom: 0.3em; /* verkleinde ondermarge */
+}
+
+p {
+    line-height: 1.5;
+    color: #333;
+    margin-top: 0.2em; /* kleine marge boven de paragraaf */
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.flex-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.flex-row img {
+    max-width: 320px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flex-row img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.flex-row .text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+}
+
+.lightbox img {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 12px;
+}
+
+.lightbox span {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .flex-row img {
+        width: 100%;
+        height: auto;
+    }
+}
+</style>
 </head>
-<body> 
-    <style>
-        .container {
-            background: rgba(255, 255, 255, 0.705);
-            padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-        }
+<body>
 
-        /* Flexbox voor afbeelding + tekst */
-        .flex-row {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
+<div class="container">
+    <div class="title">Maxime Samsom 1GDM2</div>
 
-        .flex-row img {
-            flex-shrink: 0;
-            cursor: pointer;
-        }
+    <ul class="vertical-buttons">
+        <li><a href="index.html">🏠︎</a></li>
+    </ul>
 
-        .flex-row .text {
-            flex: 1;
-        }
-
-        /* Lightbox styling */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-        }
-
-        .lightbox img {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 8px;
-            margin-top: 5%;
-        }
-
-        .lightbox span {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* Responsive: afbeeldingen boven tekst op klein scherm */
-        @media (max-width: 768px) {
-            .flex-row {
-                flex-direction: column;
-            }
-            .flex-row img {
-                width: 100%;
-                height: auto;
-            }
-        }
-    </style>
-
-    <div class="container">
-        <div class="title">
-            Maxime Samsom 1GDM2
-        </div>
-        <div>
-            <ul class="vertical-buttons">
-                <li><a href="index.html">🏠︎</a></li>            
-            </ul>
-        </div>
+    <!-- Week 3 Header -->
+    <div class="week3-header">
         <h2>Week 3 - Ontwerpfase 2</h2>
         <h2>Eerste mid-fi schetsen:</h2>
         <p>Ik heb al mijn schermen omgezet naar mid-fi schetsen in figma. In deze ontwerpen heb ik gebruik gemaakt van kleur en juiste vormen en afmetingen.</p>
+    </div>
 
-        <!-- OVERZICHTSSCHERMEN -->
-        <h3>OVERZICHTSSCHERMEN</h3>
-        <div class="flex-row">
-            <img src="public/Afbeelding7.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
-            <div class="text">
-                <h4>Aanpassingen:</h4>
-                <p>- De bestemming heeft een Bold Italic tettertype zodat het sneller opvalt dan de rest van de informatie omdat dit is waar de reiziger eerst naar zoeken.</p>
-            </div>
-        </div>
-
-        <!-- PERRONSCHERMEN -->
-        <h3>PERRONSCHERMEN</h3>
-        <div class="flex-row">
-            <img src="public/Afbeelding8.jpg" alt="Mijn foto" class="clickable-image" width="190" height="320">
-            <div class="text">
-                <h4>Aanpassingen:</h4>
-                <p>- De bestemming heeft een Bold Italic tettertype zodat het sneller opvalt dan de rest van de informatie omdat dit is waar de reiziger eerst naar zoeken.</p>
-            </div>
-        </div>
-
-        <!-- WAGONINDELINGSSCHERMEN -->
-        <h3>WAGONINDELINGSSCHERMEN</h3>
-        <div class="flex-row">
-            <img src="public/Afbeelding9.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
-            <div class="text">
-                <h4>Aanpassingen:</h4>
-                <p>- Elke wagon heeft evenveel infokadertjes voor rolstoelen, fietsen, etc.</p>
-            </div>
+    <!-- OVERZICHTSSCHERMEN -->
+    <h3>OVERZICHTSSCHERMEN</h3>
+    <div class="flex-row">
+        <img src="public/Afbeelding7.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
+        <div class="text">
+            <h4>Aanpassingen:</h4>
+            <p>- De bestemming heeft een Bold Italic tettertype zodat het sneller opvalt dan de rest van de informatie omdat dit is waar de reiziger eerst naar zoeken.</p>
         </div>
     </div>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <span id="close">&times;</span>
-        <img id="lightbox-img" src="">
+    <!-- PERRONSCHERMEN -->
+    <h3>PERRONSCHERMEN</h3>
+    <div class="flex-row">
+        <img src="public/Afbeelding8.jpg" alt="Mijn foto" class="clickable-image" width="190" height="320">
+        <div class="text">
+            <h4>Aanpassingen:</h4>
+            <p>- De bestemming heeft een Bold Italic tettertype zodat het sneller opvalt dan de rest van de informatie omdat dit is waar de reiziger eerst naar zoeken.</p>
+        </div>
     </div>
 
-    <script>
-        const images = document.querySelectorAll('.clickable-image');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('close');
+    <!-- WAGONINDELINGSSCHERMEN -->
+    <h3>WAGONINDELINGSSCHERMEN</h3>
+    <div class="flex-row">
+        <img src="public/Afbeelding9.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
+        <div class="text">
+            <h4>Aanpassingen:</h4>
+            <p>- Elke wagon heeft evenveel infokadertjes voor rolstoelen, fietsen, etc.</p>
+        </div>
+    </div>
+</div>
 
-        images.forEach(img => {
-            img.addEventListener('click', () => {
-                lightbox.style.display = 'block';
-                lightboxImg.src = img.src;
-            });
-        });
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span id="close">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
 
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
+<script>
+const images = document.querySelectorAll('.clickable-image');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('close');
 
-        lightbox.addEventListener('click', e => {
-            if(e.target === lightbox) {
-                lightbox.style.display = 'none';
-            }
-        });
-    </script>
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', e => {
+    if(e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+</script>
+
 </body>
 </html>

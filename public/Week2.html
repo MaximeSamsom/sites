@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+
+    <!-- Link to your CSS files -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/flexboxes.css">
+    <link rel="stylesheet" href="assets/nav.css">
+    <link rel="stylesheet" href="assets/typography.css">
+
+    <!-- ⭐ EXTRA CSS: container, flexbox & lightbox -->
+    <style>
+        .container {
+            background: rgba(255, 255, 255, 0.705);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .vertical-buttons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Flexbox voor elke schermsectie (tekst naast afbeelding) */
+        .screen-section {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .screen-section img {
+            max-width: 300px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .screen-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Responsive voor mobiel */
+        @media (max-width: 768px) {
+            .screen-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .screen-section img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .lightbox img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .lightbox span {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            Maxime Samsom 1GDM2
+        </div>
+
+        <ul class="vertical-buttons">
+            <li><a href="index.html">🏠︎</a></li>
+        </ul>
+
+        <div></div> 
+        <h2>Week 2 - Tweede schetsen</h2>
+
+            <!-- OVERZICHTSSCHERMEN -->
+            <h3>OVERZICHTSSCHERMEN</h3>
+            <div class="screen-section">
+                <img src="Afbeelding4.jpg" alt="Mijn foto" class="clickable-image" width="300" height="200">
+                <div class="screen-text">
+                    <h4>Aanpassingen:</h4>
+                    <p>1. De status van de treinen heb ik verdeeld in 3 kleuren; Rood voor een geannuleerde trein, oranje voor een trein met vertraging en groen voor een trein die op tijd is...</p>
+                    <p>2. Storingen en mededelingen heb ik op 2 aparte vensters gezet zodat reizigers een duidelijk onderscheid kunnen maken...</p>
+                    <h4>Toevoegingen:</h4>
+                    <p>1. De bestemming van de trein zal na 7 seconden in een andere taal staan bij treinen die door deze taalgebieden rijden...</p>
+                    <h4>Aanpassingen schets:</h4>
+                    <p>1. In mijn vorige ontwerpen heb ik geen gebruik gemaakt van een schaal. In dit ontwerp heb ik de schaal 1:9 gebruikt.</p>
+                </div>
+            </div>
+
+            <!-- PERRONSCHERMEN -->
+            <h3>PERRONSCHERMEN</h3>
+            <div class="screen-section">
+                <img src="Afbeelding5.jpg" alt="Mijn foto" class="clickable-image" width="200" height="300">
+                <div class="screen-text">
+                    <h4>Aanpassingen:</h4>
+                    <p>1. De status van de treinen heb ik verdeeld in 3 kleuren; Rood voor een geannuleerde trein, oranje voor een trein met vertraging en groen voor een trein die op tijd is...</p>
+                    <p>2. Ook op de perronschermen heb ik de symbolen van het type trein veranderd door afkortingen zodat dit overal gelijk is...</p>
+                    <h4>Toevoegingen:</h4>
+                    <p>1. Een aftelklokje bij elke trein zodat reizigers weten hoelang ze nog hebben voordat hun trein aankomt op het perron.</p>
+                    <h4>Aanpassingen schets:</h4>
+                    <p>1. In mijn vorige ontwerpen heb ik geen gebruik gemaakt van een schaal. In dit ontwerp heb ik de schaal 1:6 gebruikt.</p>
+                    <h4>Extra opmerkingen:</h4>
+                    <p>1. De bolletjes op de tijdlijn van de bestemmingen staan voor de toekomstige haltes...</p>
+                </div>
+            </div>
+
+            <!-- WAGONINDELINGSSCHERMEN -->
+            <h3>WAGONINDELINGSSCHERMEN</h3>
+            <div class="screen-section">
+                <img src="Afbeelding6.jpg" alt="Mijn foto" class="clickable-image" width="300" height="200">
+                <div class="screen-text">
+                    <h4>Aanpassingen:</h4>
+                    <p>1. In mijn vorige schets stond wagon 1 rechtsonder en wagon 8 linksboven...</p>
+                    <p>2. De kader voor de updates van de wagon waarin de reizigers zich bevinden heb ik verplaatst van onder de wagon, naar rechts van het scherm...</p>
+                    <h4>Toevoegingen:</h4>
+                    <p>1. De wagon waarin de reizigers zich bevinden zal verlicht zijn zodat ze ten allen tijden kunnen zien waar ze zich bevinden in de trein.</p>
+                    <h4>Aanpassingen schets:</h4>
+                    <p>1. In mijn vorige ontwerpen heb ik geen gebruik gemaakt van een schaal. In dit ontwerp heb ik de schaal 1:9 gebruikt.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span id="close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.clickable-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', e => {
+            if(e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
+

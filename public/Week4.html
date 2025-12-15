@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/flexboxes.css">
+    <link rel="stylesheet" href="assets/nav.css">
+    <link rel="stylesheet" href="assets/typography.css">
+</head>
+<body>
+
+    <!-- ⭐ EXTRA CSS voor witte transparante kader + FLEXBOXEN + LIGHTBOX -->
+    <style>
+        .container {
+            background: rgba(255, 255, 255, 0.705);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* FLEXBOX voor foto's + tekst */
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .flex-row img {
+            flex-shrink: 0;
+            cursor: pointer; /* klik-handje */
+        }
+
+        /* LIGHTBOX OVERLAY */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(3px);
+        }
+
+        .lightbox img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+            margin-top: 5%;
+        }
+
+        .lightbox span {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="container">
+        <div class="title">
+            Maxime Samsom 1GDM2
+        </div>
+
+        <div>
+            <ul class="vertical-buttons">
+                <li><a href="index.html">🏠︎</a></li>            
+            </ul>
+        </div>
+
+        <h2>Week 4 - Tweede mid-fi schetsen:</h2>
+
+        <!-- OVERZICHTSSCHERMEN -->
+        <h3>OVERZICHTSSCHERMEN</h3>
+
+        <div class="flex-row">
+            <img src="Afbeelding10.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
+
+            <div>
+                <h4>Aanpassingen:</h4>
+                <p>- Ik heb ervoor gekozen om de bestemmingen en het type trein links uit te lijnen. Dit maakt het duidelijker voor de reiziger dan dat de bestemmingen gecentreerd staat. Niet alle bestemmingen zijn even lang waardoor het snel chaotisch kan zijn als de bestemmingen gecentreerd staan.</p>
+                <p>- In deze schets heb ik de status een rode kleur gegeven voor geannuleerde trein en een oranje kleur voor de treinen die vertraging hebben. De groene kleur voor treinen die op tijd zijn heb ik weggelaten om het scherm een rustigere uitstraling te geven.</p>
+                <p>- Het lettertype van de status heb ik kleiner gemaakt zodat ook lange woorden zoals geannuleerd mooi in de kader passen.</p>
+            </div>
+        </div>
+
+        <!-- PERRONSCHERMEN -->
+        <h3>PERRONSCHERMEN</h3>
+
+        <div class="flex-row">
+            <img src="Afbeelding11.jpg" alt="Mijn foto" class="clickable-image" width="190" height="320">
+
+            <div>
+                <h4>Aanpassingen:</h4>
+                <p>- Het klokje waar instaat over hoeveel minuten de trein aankomt heb ik weggehaald, deze nam veel plaats in en was daardoor heel onduidelijk. Door het tekort aan plaats had het klokje niet genoeg meerwaarde en heb ik de keuze gemaakt om het weg te halen zodat het scherm wat rustiger toont.</p>
+                <p>- Ook hier heb ik het lettertype van de status verkleind zodat het mooi op het scherm past.</p>
+
+                <h4>Toevoegingen:</h4>
+                <p>- De kleurcodes van het overzichtsscherm heb ik overgenomen in dit scherm zodat de kleuren universeel zijn voor alle schermen, dit maakt de kleurcodes duidelijk voor de reizigers.</p>
+            </div>
+        </div>
+
+        <!-- WAGONINDELINGSSCHERMEN -->
+        <h3>WAGONINDELINGSSCHERMEN</h3>
+
+        <div class="flex-row">
+            <img src="Afbeelding12.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
+
+            <div>
+                <h4>Aanpassingen:</h4>
+                <p>- De pijl van de onderste rij heb ik later doorlopen van de pijl erboven. De afzonderlijke pijl die er stond heb ik weggehaald zodat het duidelijker is dat het over één trein gaan en geen twee verschillende treinen.</p>
+                <p>- De lege vakjes heb ik ingevuld met de juiste iconen zodat het duidelijk zichtbaar is wat de functie van deze kaders is.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span id="close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.clickable-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
+

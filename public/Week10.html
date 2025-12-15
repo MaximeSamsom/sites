@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 10</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/flexboxes.css">
+    <link rel="stylesheet" href="assets/nav.css">
+    <link rel="stylesheet" href="assets/typography.css">
+
+    <style>
+        .container {
+            background: rgba(255, 255, 255, 0.705);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .vertical-buttons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .screen-section {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .screen-section img {
+            max-width: 300px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .screen-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px; /* compactere tekst */
+        }
+
+        @media (max-width: 768px) {
+            .screen-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .screen-section img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .lightbox img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .lightbox span {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            Maxime Samsom 1GDM2
+        </div>
+
+        <ul class="vertical-buttons">
+            <li><a href="index.html">🏠︎</a></li>
+        </ul>
+        <div class="section">
+            <h2>Week 10 - Interactieve Figma schermen voor de smartphone</h2>
+
+            <div class="screen-section">
+                <div class="screen-text">
+                    <p>Ik heb nagedacht over de drie hoofdschermen van de vorige weken en hoe ik deze kan omzetten in handige schermen voor de smartphone. Bepaalde elementen moest ik hiervoor aanpassen.</p>
+                    <p>Het wagonindelingsscherm was horizontaal, voor de app moest ik dit weergeven op een verticale manier, hier ben ik mee aan de slag gegaan en ik heb ervoor gekozen om de trein zelf verticaal te zetten met de informatie ernaast in plaats van horizontaal met de informatie eronder.</p>
+                    <p>Zowel voor het overzichtsscherm als voor het perronscherm heb ik ervoor gekozen om de status van de trein weer te geven met kleuren zodat dit minder plaats inneemt op het scherm. Rood voor een geannuleerde trein, oranje voor een trein met vertraging en groen voor een trein die optijd zal aankomen.</p>
+                </div>
+                <img src="3Schermen.jpg" alt="Mijn foto" class="clickable-image" width="300" height="240">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span id="close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.clickable-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', e => {
+            if(e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

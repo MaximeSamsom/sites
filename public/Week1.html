@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/flexboxes.css">
+    <link rel="stylesheet" href="assets/nav.css">
+    <link rel="stylesheet" href="assets/typography.css">
+
+    <!-- ⭐ EXTRA CSS voor witte transparante kader -->
+    <style>
+        .container {
+            background: rgba(255, 255, 255, 0.705);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .vertical-buttons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .screen-section {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .screen-section img {
+            max-width: 300px;
+            border-radius: 8px;
+            cursor: pointer; /* maakt de afbeelding klikbaar */
+        }
+
+        .screen-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .lightbox img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .lightbox span {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="title">
+            Maxime Samsom 1GDM2
+        </div>
+
+        <div class="nav-buttons">
+            <ul class="vertical-buttons">
+                <li><a href="index.html">🏠︎</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Week 1 - Onderzoek</h2>
+            <p>Wat zoeken reizigers met haast als eerste op de infoschermen?</p>
+            <p>- Uur van vertrek, perron, bestemming & status</p>
+            <p>- Huidige uur, uur van vertrek, perron & bestemming</p>
+            <p>(Belangrijk: het uur moet duidelijk zichtbaar zijn)</p>
+            <p>Wat zoeken toeristen die de Nederlandse taal niet kennen?</p>
+            <p>- Bestemming & perron</p>
+            <p>- Dingen die ze wel begrijpen</p>
+            <p>- Bestemming, perron & uur van vertrek</p>
+            <p>Conclusie: weinig mensen kijken naar de nummer en het type van de trein. Deze kunnen we dus redelijk klein maken op de schermen. Belangrijke informatie die zeker wel groot moet zijn zijn de bestemming, het uur van vertrek en het perron.</p>
+        </div>
+
+        <div class="section">
+            <h2>Ontwerpfase 1 - Eerste schetsen</h2>
+
+            <!-- OVERZICHTSSCHERMEN -->
+            <h3>OVERZICHTSSCHERMEN</h3>
+            <div class="screen-section">
+                <img src="Afbeelding1.jpg" alt="Mijn foto" class="clickable-image">
+                <div class="screen-text">
+                    <p>1. Ik heb ervoor gekozen om de uren van aankomst groot en duidelijk te maken zodat gehaaste reizigers snel kunnen zien om hoe laat hun trein vertrekt.</p>
+                    <p>2. Ook het perron is groot en duidelijk, zo weet men snel waar ze naartoe moeten.</p>
+                    <p>3. Het huidige uur staat ook op dit scherm. Men kan naar deze klok kijken zodat ze weten hoeveel tijd ze nog exact hebben tot hun trein aankomt.</p>
+                    <p>4. Ik heb gekozen voor symbolen voor de types van de treinen om te veel tekst te vermijden op het scherm. De legende van deze symbolen staat aan de rechterkant van het scherm zodat men weet welk symbool voor welke trein staat.</p>
+                </div>
+            </div>
+
+            <!-- PERRONSCHERMEN -->
+            <h3>PERRONSCHERMEN</h3>
+            <div class="screen-section">
+                <img src="Afbeelding2.jpg" alt="Mijn foto" class="clickable-image" style="height: 300px;">
+                <div class="screen-text">
+                    <p>1. Ook op deze schermen staat het uur groot en duidelijk zodat het goed en snel leesbaar is.</p>
+                    <p>2. Aan de bovenkant van het scherm staat het station en het perron waarop ze zich bevinden.</p>
+                    <p>3. Ik heb ervoor gekozen om de volgende bestemmingen te tonen op een soort tijdlijn met stippen voor de volgende bestemming. Zo weten de reizigers hoeveel haltes ze moeten doen voor ze op hun bestemming zijn.</p>
+                    <p>4. De status van de treinen staat rechts van het scherm. Deze zullen aangeven hoeveel minuten vertraging de trein heeft, of de trein op tijd is of als een trein geannuleerd wordt.</p>
+                </div>
+            </div>
+
+            <!-- WAGONINDELINGSSCHERMEN -->
+            <h3>WAGONINDELINGSSCHERMEN</h3>
+            <div class="screen-section">
+                <img src="Afbeelding3.jpg" alt="Mijn foto" class="clickable-image">
+                <div class="screen-text">
+                    <p>1. Op dit scherm zien we elke wagon en de rijrichting van de trein centraal op het scherm staan.</p>
+                    <p>2. Bovenaan staat steeds de volgende bestemming van de trein, hierdoor weten reizigers of ze nog kunnen blijven zitten of dat ze bij het volgende station moeten afstappen.</p>
+                    <p>3. Ik heb ervoor gekozen om de status van de trein aan de rechterkant verticaal te zetten om plaats te besparen op het scherm.</p>
+                    <p>4. Elke wagon heeft een vak gekregen waarin real-time updates komen te staan over de wagon.</p>
+                    <p>5. De twee vakjes onder het elke wagon zijn voorbehouden voor de klasse van de wagon en de symbolen voor fietsen, rolstoelen, etc.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Lightbox element -->
+    <div id="lightbox" class="lightbox">
+        <span id="close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <!-- JavaScript voor lightbox -->
+    <script>
+        const images = document.querySelectorAll('.clickable-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', e => {
+            if(e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
+

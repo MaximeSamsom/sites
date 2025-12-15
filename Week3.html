@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/flexboxes.css">
+    <link rel="stylesheet" href="assets/nav.css">
+    <link rel="stylesheet" href="assets/typography.css">
+</head>
+<body> 
+    <style>
+        .container {
+            background: rgba(255, 255, 255, 0.705);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Flexbox voor afbeelding + tekst */
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .flex-row img {
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .flex-row .text {
+            flex: 1;
+        }
+
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+        }
+
+        .lightbox img {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+            margin-top: 5%;
+        }
+
+        .lightbox span {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Responsive: afbeeldingen boven tekst op klein scherm */
+        @media (max-width: 768px) {
+            .flex-row {
+                flex-direction: column;
+            }
+            .flex-row img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="title">
+            Maxime Samsom 1GDM2
+        </div>
+        <div>
+            <ul class="vertical-buttons">
+                <li><a href="index.html">🏠︎</a></li>            
+            </ul>
+        </div>
+        <h2>Week 3 - Ontwerpfase 2</h2>
+        <h2>Eerste mid-fi schetsen:</h2>
+        <p>Ik heb al mijn schermen omgezet naar mid-fi schetsen in figma. In deze ontwerpen heb ik gebruik gemaakt van kleur en juiste vormen en afmetingen.</p>
+
+        <!-- OVERZICHTSSCHERMEN -->
+        <h3>OVERZICHTSSCHERMEN</h3>
+        <div class="flex-row">
+            <img src="public/Afbeelding7.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
+            <div class="text">
+                <h4>Aanpassingen:</h4>
+                <p>- De bestemming heeft een Bold Italic tettertype zodat het sneller opvalt dan de rest van de informatie omdat dit is waar de reiziger eerst naar zoeken.</p>
+            </div>
+        </div>
+
+        <!-- PERRONSCHERMEN -->
+        <h3>PERRONSCHERMEN</h3>
+        <div class="flex-row">
+            <img src="public/Afbeelding8.jpg" alt="Mijn foto" class="clickable-image" width="190" height="320">
+            <div class="text">
+                <h4>Aanpassingen:</h4>
+                <p>- De bestemming heeft een Bold Italic tettertype zodat het sneller opvalt dan de rest van de informatie omdat dit is waar de reiziger eerst naar zoeken.</p>
+            </div>
+        </div>
+
+        <!-- WAGONINDELINGSSCHERMEN -->
+        <h3>WAGONINDELINGSSCHERMEN</h3>
+        <div class="flex-row">
+            <img src="public/Afbeelding9.jpg" alt="Mijn foto" class="clickable-image" width="320" height="190">
+            <div class="text">
+                <h4>Aanpassingen:</h4>
+                <p>- Elke wagon heeft evenveel infokadertjes voor rolstoelen, fietsen, etc.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span id="close">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.clickable-image');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', e => {
+            if(e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

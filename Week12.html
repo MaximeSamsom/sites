@@ -187,6 +187,80 @@ h2 {
 @media (max-width: 600px) {
     .hamburger { font-size: 26px; padding: 8px 12px; }
 }
+/* ================= Footer knoppen ================= */
+.footer-knoppen {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 999;
+}
+
+.footer-knop {
+    padding: 10px 16px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+.footer-knop:hover {
+    background: var(--accent);
+    transform: translateY(-4px);
+}
+/* ================= Week navigatie (subtiel) ================= */
+.week-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: all 0.25s ease;
+    opacity: 0.85;
+    z-index: 998;
+}
+
+.week-nav:hover {
+    opacity: 1;
+    background: white;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* links naast container */
+.week-prev {
+    left: 12px;
+}
+
+/* rechts naast container */
+.week-next {
+    right: 12px;
+}
+
+/* mobiel verbergen */
+@media (max-width: 768px) {
+    .week-nav {
+        display: none;
+    }
+}
+/* ================= PDF knop rechtsonder ================= */
+.pdf-knop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
 
 </style>
 </head>
@@ -210,7 +284,9 @@ h2 {
         <a href="Week13.html">Week 13</a>
     </nav>
 </div>
-
+<!-- Week navigatie -->
+<a href="Week11.html" class="week-nav week-prev">← Vorige week</a>
+<a href="Week13.html" class="week-nav week-next">Volgende week →</a>
 <div class="container">
     <div class="title">Maxime Samsom 1GDM2</div>
 
@@ -218,12 +294,12 @@ h2 {
         <li><a href="index.html">🏠︎</a></li>
     </ul>
 
-    <h2>Week 12 - Tekst</h2>
+    <h2>Week 12 - Verbeteringen vorige week</h2>
 
     <div class="screen-section">
         <div class="screen-text">
-            <p>Deze week heb ik verder gewerkt aan het project en de logboeknotities bijgewerkt. Ik heb de laatste aanpassingen van eerdere weken samengevoegd en de structuur van de documenten verbeterd.</p>
-            <p>Daarnaast heb ik nagedacht over de presentatie van de app en welke elementen duidelijker weergegeven kunnen worden voor de gebruiker. Interactieve onderdelen zijn getest en kleine verbeteringen doorgevoerd.</p>
+            <p>Deze week heb ik verder gewerkt aan de schermen en mijn logboeknotities bijgewerkt. Ik heb aanpassingen van eerdere weken samengevoegd en de structuur van het documenten verbeterd.</p>
+            <p>Daarnaast heb ik nagedacht over de presentatie van de app en welke elementen duidelijker weergegeven kunnen worden voor de gebruiker. Ik heb de interactieve onderdelen getest en laten testen door familieleden om de laatste aanpassingen te doen aan mijn app.</p>
         </div>
         <!-- Indien je een afbeelding wilt toevoegen, kun je deze hieronder plaatsen -->
         <!-- <img src="public/voorbeeld.jpg" alt="Voorbeeld" class="clickable-image" width="300" height="200"> -->
@@ -266,6 +342,15 @@ function toggleMenu() {
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 </script>
+<!-- Linksonder knoppen -->
+<div class="footer-knoppen">
+    <a href="https://github.com/MaximeSamsom/sites" target="_blank" class="footer-knop">GitHub</a>
+    <a href="https://app.netlify.com/projects/htmlsite15-12/overview" target="_blank" class="footer-knop">Netlify</a>
+</div>
+<!-- PDF knop rechtsonder -->
+<a href="2526_PRTT_SamsomMaxime_ontwerpdocumentatie.zip" target="_blank" class="footer-knop pdf-knop">
+    PDF
+</a>
 
 </body>
 </html>

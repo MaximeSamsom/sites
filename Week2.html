@@ -214,6 +214,80 @@ body {
 @media (max-width: 600px) {
     .hamburger { font-size: 26px; padding: 8px 12px; }
 }
+/* ================= Footer knoppen ================= */
+.footer-knoppen {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 999;
+}
+
+.footer-knop {
+    padding: 10px 16px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+.footer-knop:hover {
+    background: var(--accent);
+    transform: translateY(-4px);
+}
+/* ================= Week navigatie (subtiel) ================= */
+.week-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: all 0.25s ease;
+    opacity: 0.85;
+    z-index: 998;
+}
+
+.week-nav:hover {
+    opacity: 1;
+    background: white;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* links naast container */
+.week-prev {
+    left: 12px;
+}
+
+/* rechts naast container */
+.week-next {
+    right: 12px;
+}
+
+/* mobiel verbergen */
+@media (max-width: 768px) {
+    .week-nav {
+        display: none;
+    }
+}
+/* ================= PDF knop rechtsonder ================= */
+.pdf-knop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
 
 </style>
 </head>
@@ -237,6 +311,8 @@ body {
         <a href="Week13.html">Week 13</a>
     </nav>
 </div>
+<a href="Week1.html" class="week-nav week-prev">← Vorige week</a>
+<a href="Week3.html" class="week-nav week-next">Volgende week →</a>
 
 <div class="container">
     <div class="title">Maxime Samsom 1GDM2</div>
@@ -253,10 +329,11 @@ body {
             <img src="public/Afbeelding4.jpg" alt="Mijn foto" class="clickable-image" width="300" height="200">
             <div class="screen-text">
                 <h4>Aanpassingen:</h4>
-                <p>1. De status van de treinen heb ik verdeeld in 3 kleuren; Rood voor een geannuleerde trein, oranje voor een trein met vertraging en groen voor een trein die op tijd is...</p>
-                <p>2. Storingen en mededelingen heb ik op 2 aparte vensters gezet zodat reizigers een duidelijk onderscheid kunnen maken...</p>
+                <p>1. De status van de treinen heb ik verdeeld in 3 kleuren; Rood voor een geannuleerde trein, oranje voor een trein met vertraging en groen voor een trein die op tijd is. Op deze manier kunnen reizigers die gehaast zijn snel zien welke status hun trein heeft. Als hier gebruik wordt gemaakt van woorden zullen deze om de 7 seconden verspringen van taal bij treinen waar nodig.</p>
+                <p>2. Storingen en mededelingen heb ik op 2 aparte vensters gezet zodat reizigers een duidelijk onderscheid kunnen maken tussen storingen van de treinen of algemene mededelingen.</p>
+                <p>3. In mijn eerste schets had in symbolen voorzien voor de verschillende types treinen. In mijn tweede schets heb ik dit veranderd naar afkortingen omdat symbolen snel voor verwarringen kunnen zorgen als reizigers een slechter zicht hebben of het verschil tussen de symbolen niet kennen.</p>
                 <h4>Toevoegingen:</h4>
-                <p>1. De bestemming van de trein zal na 7 seconden in een andere taal staan bij treinen die door deze taalgebieden rijden...</p>
+                <p>1. De bestemming van de trein zal na 7 seconden in een andere taal staan bij treinen die door deze taalgebieden rijden. De bedoeling is dat deze van taal verspringen. Ik heb gekozen om het te laten verspringen en niet te laten verschuiven omdat het dan duidelijk een andere taal is. Als we deze tekst laten verschuiven is er een kans dat er verwarring ontstaat en dat reizigers denken dat het een andere bestemming is.</p>
                 <h4>Aanpassingen schets:</h4>
                 <p>1. In mijn vorige ontwerpen heb ik geen gebruik gemaakt van een schaal. In dit ontwerp heb ik de schaal 1:9 gebruikt.</p>
             </div>
@@ -267,14 +344,15 @@ body {
             <img src="public/Afbeelding5.jpg" alt="Mijn foto" class="clickable-image" width="200" height="300">
             <div class="screen-text">
                 <h4>Aanpassingen:</h4>
-                <p>1. De status van de treinen heb ik verdeeld in 3 kleuren; Rood voor een geannuleerde trein, oranje voor een trein met vertraging en groen voor een trein die op tijd is...</p>
-                <p>2. Ook op de perronschermen heb ik de symbolen van het type trein veranderd door afkortingen zodat dit overal gelijk is...</p>
+                <p>1. De status van de treinen heb ik verdeeld in 3 kleuren; Rood voor een geannuleerde trein, oranje voor een trein met vertraging en groen voor een trein die op tijd is. Op deze manier kunnen reizigers die gehaast zijn snel zien welke status hun trein heeft. Als hier gebruik wordt gemaakt van woorden zullen deze om de 7 seconden verspringen van taal bij treinen waar nodig.</p>
+                <p>2. Ook op de perronschermen heb ik de symbolen van het type trein veranderd door afkortingen zodat dit overal gelijk is.</p>
+                <p>3. Ook op deze borden zullen de bestemmingen van taal verspringen na 7 seconden.</p>
                 <h4>Toevoegingen:</h4>
                 <p>1. Een aftelklokje bij elke trein zodat reizigers weten hoelang ze nog hebben voordat hun trein aankomt op het perron.</p>
                 <h4>Aanpassingen schets:</h4>
                 <p>1. In mijn vorige ontwerpen heb ik geen gebruik gemaakt van een schaal. In dit ontwerp heb ik de schaal 1:6 gebruikt.</p>
                 <h4>Extra opmerkingen:</h4>
-                <p>1. De bolletjes op de tijdlijn van de bestemmingen staan voor de toekomstige haltes...</p>
+                <p>1. De bolletjes op de tijdlijn van de bestemmingen staan voor de toekomstige haltes, , de haltes voor het station waar de reiziger zich bevindt is niet zichtbaar op deze lijn.</p>
             </div>
         </div>
 
@@ -283,8 +361,10 @@ body {
             <img src="public/Afbeelding6.jpg" alt="Mijn foto" class="clickable-image" width="300" height="200">
             <div class="screen-text">
                 <h4>Aanpassingen:</h4>
-                <p>1. In mijn vorige schets stond wagon 1 rechtsonder en wagon 8 linksboven...</p>
-                <p>2. De kader voor de updates van de wagon waarin de reizigers zich bevinden heb ik verplaatst van onder de wagon, naar rechts van het scherm...</p>
+                <p>1. In mijn vorige schets stond wagon 1 rechtsonder en wagon 8 (de laatste wagon) linksboven. Dit heb ik aangepast zodat wagon 1 rechtsboven staat en wagon 8 linksonder staat.</p>
+                <p>2. De kader voor de updates van de wagon waarin de reizigers zich bevinden heb ik verplaatst van onder de wagon, naar rechts van het scherm zodat de aanpassingen voor hun eigen wagon groot en duidelijk zijn.</p>
+                <p>3. De status van de trein staat nu horizontaal, in mijn vorige schets stond deze verticaal om plaats te besparen, maar ik heb ondervonden dat verticaal lezen veel meer moeite en tijd vraagt voor mensen, dus om het wat makkelijker te maken staat het nu horizontaal.</p>
+                <p>4. In mijn vorige schets had in nog geen concrete iconen voor fietsen, rolstoelen etc., deze heb ik nu wel toegevoegd aan mijn schets.</p>
                 <h4>Toevoegingen:</h4>
                 <p>1. De wagon waarin de reizigers zich bevinden zal verlicht zijn zodat ze ten allen tijden kunnen zien waar ze zich bevinden in de trein.</p>
                 <h4>Aanpassingen schets:</h4>
@@ -329,6 +409,15 @@ function toggleMenu() {
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 </script>
+<!-- Linksonder knoppen -->
+<div class="footer-knoppen">
+    <a href="https://github.com/MaximeSamsom/sites" target="_blank" class="footer-knop">GitHub</a>
+    <a href="https://app.netlify.com/projects/htmlsite15-12/overview" target="_blank" class="footer-knop">Netlify</a>
+</div>
+<!-- PDF knop rechtsonder -->
+<a href="2526_PRTT_SamsomMaxime_ontwerpdocumentatie.zip" target="_blank" class="footer-knop pdf-knop">
+    PDF
+</a>
 
 </body>
 </html>
